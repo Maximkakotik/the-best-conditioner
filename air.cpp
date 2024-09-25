@@ -1,20 +1,69 @@
-﻿// air.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <fstream>
+#include <string>
+#include <exception>
 
-#include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
-}
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+using namespace std;
+class AirConditioner {
+private:
+	int t = 10;
+	int v = 1;
+public:
+	AirConditioner() {
+		cout << "temp=10; speed=1" << endl;
+	}
+	void setT(int k) {
+		if (k >= 10 && k <= 30) {
+			t = k;
+		}
+		else {
+			exception();
+		}
+	}
+	void setV(int k) {
+		if (k >= 1 && k <= 10) {
+			v = k;
+		}
+		else {
+			exception();
+		}
+	}
+	void tempplus() {
+		if (this->t < 30) {
+			this->t++;
+		}
+		else {
+			cout << "max temp" << endl;
+		}
+	}
+	void tempminus() {
+		if (this->t > 10) {
+			this->t--;
+		}
+		else {
+			cout << "min temp" << endl;
+		}
+	}
+	void vplus() {
+		if (this->v >= 1 && this->v < 10) {
+			this->v++;
+		}
+		else {
+			this->v = 1;
+		}
+	}
+	void vminus() {
+		if (this->v > 1 && this->v <= 10) {
+			this->v--;
+		}
+		else {
+			this->v = 10;
+		}
+	}
+	int getT() {
+		return this->t;
+	}
+	int getV() {
+		return this->v;
+	}
+};
