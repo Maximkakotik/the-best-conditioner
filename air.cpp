@@ -82,6 +82,7 @@ int main()
 	file << setw(4) << f << endl;
 	one.setT(18);
 	one.setV(9);
+	// xml
 	xml_document doc;
 	xml_node main_node = doc.append_child("conditioners");
 	xml_node cond_node = main_node.append_child("conditioner");
