@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<conditioners>
+	<conditioner name="one">
+		<temp>18</temp>
+		<speed>9</speed>
+	</conditioner>
+</conditioners>
