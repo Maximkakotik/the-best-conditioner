@@ -67,3 +67,9 @@ public:
 		return this->v;
 	}
 };
+int main()
+{
+	AirConditioner one;
+	one.setT(13);
+	one.setV(5);
+}
